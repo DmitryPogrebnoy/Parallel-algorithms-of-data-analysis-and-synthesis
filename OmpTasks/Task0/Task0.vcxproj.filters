@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Parallel-algorithms-of-data-analysis-and-synthesis.cpp">
+    <ClCompile Include="Task0.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
