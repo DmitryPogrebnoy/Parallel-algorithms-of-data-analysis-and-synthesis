@@ -71,9 +71,8 @@ int main(int argc, char* argv[])
         cout << endl;
     }
     
-    double time = alg_matmul2D(5, 5, 5, A, B, C, 8);
-    cout.precision(5);
-    cout << "Mult 5x5 matrices takes time - " << cout.precision(5) << time << endl << endl;
+    double time = alg_matmul2D(5, 5, 5, A, B, C, 12);
+    cout << "Mult 5x5 matrices takes time - " << time << endl << endl;
 
     for (int i = 0; i < 5; i++) {
         delete[] A[i];
@@ -96,22 +95,20 @@ int main(int argc, char* argv[])
         C[i] = new int[N];
     }
 
-    int T = 5;
+    int T = 20;
     double singlemodTime = 0;
     for (int j = 0; j < T; j++) {
         singlemodTime += alg_matmul2D(M, N, P, A, B, C, 1);
     }
     singlemodTime = singlemodTime / T;
-    cout.precision(5);
     cout << "Run with " << 1 << " threads takes average time - " << singlemodTime << ". Efficiency is 1" << endl << endl;
 
-    for (int i = 2; i < 11; i++) {
-        int T = 5;
+    for (int i = 2; i < 13; i++) {
+        int T = 20;
         double time = 0;
         for (int j = 0; j < T; j++) {
             time += alg_matmul2D(M, N, P, A, B, C, i);
         }
-        cout << time << "   " << singlemodTime << endl;
         cout << "Run with " << i << " threads takes average time - " << time / T << ". Efficiency is " <<
             singlemodTime / (time / T) << endl << endl;
     }
