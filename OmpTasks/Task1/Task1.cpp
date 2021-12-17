@@ -3,7 +3,7 @@
 
 using namespace std;
 
-long const N = 100000000;
+long const N_TEST = 100000000;
 
 double max(int A[], int i, int j, int threadNumber)
 {
@@ -14,7 +14,7 @@ double max(int A[], int i, int j, int threadNumber)
     for (int idx = i; idx < j; idx++)
         max_val = max_val > A[idx] ? max_val : A[idx];
 
-    if (j != N) {
+    if (j != N_TEST) {
         cout << "Max value is " << max_val << endl;
     }
     return omp_get_wtime() - t1;
@@ -24,8 +24,9 @@ int main(int argc, char* argv[])
 {
     cout.precision(10);
     int B[10] = { 1,2,3,4,5,6,7,8,9,10 };
-    cout << "Test run for array with 10 elements - " << max(B, 0, 10, 8) << endl << endl;
+    cout << "Test run for array with 10 elements - " << max(B, 0, 10, 12) << endl << endl;
 
+    int N = N_TEST;
     for (int i = 1; i < 11; i++) {
         int* A = new int[N];
         for (int i = 0; i < N; i++) {
