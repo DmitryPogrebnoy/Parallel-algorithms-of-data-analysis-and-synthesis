@@ -3,9 +3,9 @@
 
 using namespace std;
 
-long const P = 1000;
-long const M = 1000;
-long const N = 1000;
+long const P_TEST = 1000;
+long const M_TEST = 1000;
+long const N_TEST = 1000;
 
 double alg_matmul2D(int m, int n, int p, int** a, int** b, int** c, int T) 
 {
@@ -83,6 +83,16 @@ int main(int argc, char* argv[])
     delete[] B;
     delete[] C;
 
+    int M, N, P;
+    if (argc == 4) {
+        M = atoi(argv[1]);
+        N = atoi(argv[2]);
+        P = atoi(argv[2]);
+    } else {
+        M = M_TEST;
+        N = N_TEST;
+        P = P_TEST;
+    }
 
     A = new int* [M];
     B = new int* [M];
@@ -103,7 +113,7 @@ int main(int argc, char* argv[])
     singlemodTime = singlemodTime / T;
     cout << "Run with " << 1 << " threads takes average time - " << singlemodTime << ". Efficiency is 1" << endl << endl;
 
-    for (int i = 2; i < 13; i++) {
+    for (int i = 2; i < 11; i++) {
         int T = 20;
         double time = 0;
         for (int j = 0; j < T; j++) {
