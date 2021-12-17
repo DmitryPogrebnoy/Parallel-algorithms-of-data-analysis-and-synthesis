@@ -24,9 +24,16 @@ int main(int argc, char* argv[])
 {
     cout.precision(10);
     int B[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    cout << "Test array is { 1,2,3,4,5,6,7,8,9,10 }" << endl;
     cout << "Test run for array with 10 elements - " << max(B, 0, 10, 12) << endl << endl;
 
-    int N = N_TEST;
+    int N;
+    if (argc == 2) {
+        N = atoi(argv[1]);
+    } else {
+        N = N_TEST;
+    }
+   
     for (int i = 1; i < 11; i++) {
         int* A = new int[N];
         for (int i = 0; i < N; i++) {
