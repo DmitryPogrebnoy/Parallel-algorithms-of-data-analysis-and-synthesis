@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 		cout << "Hello from main process " << rank << "\n";
 		for (i = 1; i < n; i++) {
 			MPI_Recv(&message, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-			if (message > previousMessage) {
+			if (message >= previousMessage) {
 				isDescending = false;
 			} 
 			previousMessage = message;
