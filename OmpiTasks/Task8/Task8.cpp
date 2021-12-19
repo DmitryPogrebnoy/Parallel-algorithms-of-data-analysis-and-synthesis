@@ -49,9 +49,9 @@ int main(int argc, char **argv)
 
             delete[] a;
             if (rank == 0) {
-                cout << "Overall messages length is " << ((2*N*i*sizeof(int))/1024.0) << " Mb"
+                cout << "Overall messages length is " << ((2*N*i*sizeof(int))/(1024.0*1024.0)) << " Mb"
                     " and avg elapsed time is " << elapsed_time/(2*N) << endl 
-                    << "Bandwidth R is " << ((2*N*i*sizeof(int)/1024.0)/1024.0)/elapsed_time << " Gb/s" << endl;
+                    << "Bandwidth R is " << ((2*N*i*sizeof(int))/(1024.0*1024.0*1024.0))/elapsed_time << " Gb/s" << endl;
             }
         }
 
