@@ -8,10 +8,10 @@
             "name": "mpic++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/usr/bin/mpirun",
+            "program": "/usr/bin/mpiexec",
             "args": [            
                 "-np",
-                "3",
+                "6",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "stopAtEntry": false,
